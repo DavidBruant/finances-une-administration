@@ -1,0 +1,59 @@
+@import 'd3-axis';
+
+.stackchart {
+    .content{
+        text.stackchart-title{
+            font-size: 1.2em;
+            font-weight: bold;
+            
+            // In cases where the title overlaps a stackchart y-tick line, a white stroke+'paint-order: stroke' 
+            // would protect against a the title being slightly harder to read
+            // however, there is no 'paint-order: stroke' in IE11, so giving up for now
+            //paint-order: stroke;
+            //stroke: #fff;
+            //stroke-width: 2px;
+
+            tspan:nth-child(2){
+                font-weight: 100;
+            }
+        }
+
+        .brick{
+            text{
+                fill: white;
+            }
+
+            &.actionable{
+                cursor: pointer;
+            }
+        }
+    }
+
+    &.portrait{
+        .content{
+            text.stackchart-title{
+                font-size: 1em;
+                font-weight: normal;
+            }
+        }
+
+        .d3-axis.x .tick text{
+            fill: black
+        }
+    }
+
+    .d3-axis{
+        .selected{
+            font-weight: bold;
+
+            text{
+                fill: black;
+            }
+        }
+
+        .actionable{
+            cursor: pointer;
+        }
+    }
+
+}

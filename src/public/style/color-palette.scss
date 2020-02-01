@@ -1,0 +1,69 @@
+$area-color-1 : #0E7FAB;
+$area-color-2 : #F8C738;
+$area-color-3 : #EC3500;
+$area-color-4 : #B8C30F;
+$area-color-5 : #9C26B0;
+$area-color-6 : #019587;
+$area-color-7 : #795549;
+$area-color-8 : #607C8A;
+$area-color-9 : #6739B6;
+$area-color-10 : #FF5521;
+
+$discrete-grey: #AAA;
+
+
+
+@mixin apply-color($color){
+    background-color: $color;
+    fill: $color;
+    rect, circle, path{
+        fill: $color;
+    }
+}
+
+@mixin apply-area-color($color){
+    @include apply-color($color);
+
+    &.darker{
+         @include apply-color(darken($color, 20%));
+    }
+
+    &.lighter{
+         @include apply-color(lighten($color, 20%));
+    }
+}
+
+.area-color-1{
+    @include apply-area-color($area-color-1);
+}
+.area-color-2{
+    @include apply-area-color($area-color-2);
+}
+.area-color-3{
+    @include apply-area-color($area-color-3);
+}
+.area-color-4{
+    @include apply-area-color($area-color-4);
+}
+.area-color-5{
+    @include apply-area-color($area-color-5);
+}
+.area-color-6{
+    @include apply-area-color($area-color-6);
+}
+.area-color-7{
+    @include apply-area-color($area-color-7);
+}
+.area-color-8{
+    @include apply-area-color($area-color-8);
+}
+.area-color-9{
+    @include apply-area-color($area-color-9);
+}
+.area-color-10{
+    @include apply-area-color($area-color-10);
+}
+
+.discrete-grey{
+    @include apply-color($discrete-grey);
+}

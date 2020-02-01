@@ -1,0 +1,54 @@
+.finance-element-context{
+    width: 100%;
+    max-width: 60em;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    a{
+        text-decoration: underline;
+
+        .text{
+            text-decoration: underline;
+        }
+    }
+
+    & > *{
+        color: white;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        margin-bottom: 0.4em;
+
+        height: 2.2em;
+        white-space: nowrap;
+
+        & > *{
+            height:100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            border-radius: 0.3em;
+            width: 0;
+
+            transition: width 0.4s ease;
+            will-change: width;
+        }
+    }
+
+    .text{
+        margin-left: 0.5em;
+
+        &:nth-child(2){
+            color: black;
+        }
+    }
+
+}

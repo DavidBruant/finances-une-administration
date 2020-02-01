@@ -1,0 +1,60 @@
+@import 'appetizers';
+
+@import 'budget-construction';
+
+$column-padding: 40px;
+$column-max-width: 1200px + 2*$column-padding;
+$background-height: 2470px;
+
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    & > *{
+        width: 100%;
+        padding: 0 0.5em;
+
+        @media screen and (min-width: $main-column-breakpoint) {
+            padding: 0 $column-padding;
+            max-width: $column-max-width;
+        }
+    }
+    
+    & > section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .appetizers-container{
+        @media screen and (min-width: $home-layout-breakpoint) {
+            background-image: url($home-illustration-url);
+            background-color:#BEBC05;
+            min-height: $background-height;
+            // px because IE11
+            margin-top: 150px;
+        }
+
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        max-width: 100%;
+
+        .appetizers{
+            max-width: $column-max-width;
+            display: block;
+
+            @media screen and (min-width: $home-layout-breakpoint) {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
