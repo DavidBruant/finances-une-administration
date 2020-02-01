@@ -6,6 +6,3 @@ node_modules
 
 build/
 
-# temporary
-data/*.pdf
-data/**/*.pdf
