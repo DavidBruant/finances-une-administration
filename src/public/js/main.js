@@ -15,15 +15,11 @@ import {makeChildToParent, flattenTree} from '../../shared/js/finance/visitHiera
 import hierarchicalM52 from '../../shared/js/finance/hierarchicalM52.js';
 
 import Breadcrumb from '../../shared/js/components/gironde.fr/Breadcrumb';
-import Home from './components/screens/Home';
 import FinanceElement from './components/screens/FinanceElement';
-import FocusSolidarity from './components/screens/FocusSolidarity';
-import FocusInvestments from './components/screens/FocusInvestments';
-import FocusPresence from './components/screens/FocusPresence';
 
 import ExploreBudget from './components/screens/ExploreBudget';
 
-import { HOME, SOLIDARITES, INVEST, PRESENCE } from './constants/pages';
+import { HOME } from './constants/pages';
 import {
     FINANCE_DATA_RECEIVED, ATEMPORAL_TEXTS_RECEIVED, TEMPORAL_TEXTS_RECEIVED, PLAN_DE_COMPTE_RECEIVED,
     FINANCE_DETAIL_ID_CHANGE,
@@ -38,7 +34,7 @@ import {fonctionLabels} from '../../../build/finances/m52-strings.json';
  * Initialize Redux store + React binding
  *
  */
-const REACT_CONTAINER_SELECTOR = '.cd33-finance-dataviz';
+const REACT_CONTAINER_SELECTOR = '.finance-ui';
 const CONTAINER_ELEMENT = document.querySelector(REACT_CONTAINER_SELECTOR);
 
 /*
@@ -188,24 +184,7 @@ csv(urls[AGGREGATED_TEMPORAL])
  */
 
 page('/', () => {
-    console.log('in route', '/')
-
-    ReactDOM.render(
-        React.createElement(
-            Provider,
-            { store },
-            React.createElement(Home)
-        ),
-        CONTAINER_ELEMENT
-    );
-
-    const breadcrumb = DEFAULT_BREADCRUMB;
-    ReactDOM.render( React.createElement(Breadcrumb, { items: breadcrumb }), BREADCRUMB_CONTAINER );
-});
-
-
-page('/explorer', () => {
-    console.log('in route', '/explorer');
+    console.log('in route', '/');
 
     ReactDOM.render(
         React.createElement(
@@ -282,48 +261,6 @@ page('/finance-details/:contentId', ({params: {contentId}}) => {
 
     ReactDOM.render( React.createElement(Breadcrumb, { items: breadcrumb }), BREADCRUMB_CONTAINER );
 
-});
-
-page(`/focus/${SOLIDARITES}`, () => {
-    console.log('in route', `/focus/${SOLIDARITES}`);
-    scrollTo(0, 0);
-
-    ReactDOM.render(
-        React.createElement(
-            Provider,
-            { store },
-            React.createElement(FocusSolidarity)
-        ),
-        CONTAINER_ELEMENT
-    );
-});
-
-page(`/focus/${INVEST}`, () => {
-    console.log('in route', `/focus/${INVEST}`);
-    scrollTo(0, 0);
-
-    ReactDOM.render(
-        React.createElement(
-            Provider,
-            { store },
-            React.createElement(FocusInvestments)
-        ),
-        CONTAINER_ELEMENT
-    );
-});
-
-page(`/focus/${PRESENCE}`, () => {
-    console.log('in route', `/focus/${PRESENCE}`);
-    scrollTo(0, 0);
-
-    ReactDOM.render(
-        React.createElement(
-            Provider,
-            { store },
-            React.createElement(FocusPresence)
-        ),
-        CONTAINER_ELEMENT
-    );
 });
 
 page.redirect(location.pathname, '#!/')
