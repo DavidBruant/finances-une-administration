@@ -12,19 +12,19 @@ import {
     DI,
     EXPENDITURES,
     REVENUE
-} from "../../../../shared/js/finance/constants";
+} from "../../../js/finance/constants";
 
 
-import { aggregatedDocumentBudgetaireNodeTotal } from '../../../../shared/js/finance/AggregationDataStructures.js'
-import { flattenTree } from "../../../../shared/js/finance/visitHierarchical.js";
+import { aggregatedDocumentBudgetaireNodeTotal } from '../../../js/finance/AggregationDataStructures.js'
+import { flattenTree } from "../../../js/finance/visitHierarchical.js";
 
-import PageTitle from "../../../../shared/js/components/gironde.fr/PageTitle";
-import SecundaryTitle from "../../../../shared/js/components/gironde.fr/SecundaryTitle";
-import DownloadSection from "../../../../shared/js/components/gironde.fr/DownloadSection";
-import PrimaryCallToAction from "../../../../shared/js/components/gironde.fr/PrimaryCallToAction";
+import PageTitle from "../gironde.fr/PageTitle";
+import SecundaryTitle from "../gironde.fr/SecundaryTitle";
+import DownloadSection from "../gironde.fr/DownloadSection";
+import PrimaryCallToAction from "../gironde.fr/PrimaryCallToAction";
 
-import Markdown from "../../../../shared/js/components/Markdown";
-import MoneyAmount from "../../../../shared/js/components/MoneyAmount";
+import Markdown from "../Markdown";
+import MoneyAmount from "../MoneyAmount";
 
 import { urls, ANIMATION_VIDEO } from "../../constants/resources";
 

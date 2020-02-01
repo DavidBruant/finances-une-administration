@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeAmountString } from '../../../shared/js/components/MoneyAmount';
+import { makeAmountString } from './MoneyAmount';
 
 function roll(el, amount, delay){
     return new Promise(resolve => {

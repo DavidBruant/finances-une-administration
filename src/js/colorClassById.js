@@ -1,9 +1,9 @@
-import visit from '../../shared/js/finance/visitHierarchical';
+import visit from '../js/finance/visitHierarchical';
 
-import {DF, DI, RF, RI} from '../../shared/js/finance/constants';
-import aggregationDescription from '../../../data/finances/description-agrégation.json';
+import {DF, DI, RF, RI} from '../js/finance/constants';
+import aggregationDescription from '../../data/finances/description-agrégation.json';
 
-import {fonctionLabels} from '../../../build/finances/m52-strings.json';
+import {fonctionLabels} from '../../build/finances/m52-strings.json';
 
 const colorClasses = Array(10).fill().map((e, i) => `area-color-${i+1}`);
 

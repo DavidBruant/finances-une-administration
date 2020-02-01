@@ -6,7 +6,7 @@ import {DOMParser} from 'xmldom';
 export default function(plansDeCompteDirectory){
     return readdir(plansDeCompteDirectory)
     .then(files => {
-        return Promise.all(files.map(f => {
+        return Promise.all(files.filter(f => f.endsWith('.xml')).map(f => {
             return readFile(join(plansDeCompteDirectory, f))
             .then(xmlBufferToString)
             .then( str => {

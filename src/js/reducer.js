@@ -1,5 +1,5 @@
 import { Record } from 'immutable';
-import { markdown as md } from '../../shared/js/components/Markdown';
+import { markdown as md } from './components/Markdown';
 
 import {
     FINANCE_DETAIL_ID_CHANGE, FINANCE_DATA_RECEIVED, PLAN_DE_COMPTE_RECEIVED,

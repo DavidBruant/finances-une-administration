@@ -1,7 +1,7 @@
 import nearley from 'nearley';
 import memoize from '../memoize.js'
 
-import grammar from './grammar.js'
+import grammar from './grammar.js.js'
 
 function matchesSimple(r, planDeCompte, subset) {
 

@@ -5,10 +5,10 @@ import {DOMParser} from 'xmldom';
 
 import getPlansDeCompte from './shared/getPlansDeCompte.js'
 
-import xmlDocumentToDocumentBudgetaire from '../src/shared/js/finance/xmlDocumentToDocumentBudgetaire';
-import makeAggregateFunction from '../src/shared/js/finance/makeAggregateFunction.js'
-import csvStringToCorrections from '../src/shared/js/finance/csvStringToCorrections';
-import {fromXMLDocument} from '../src/shared/js/finance/planDeCompte.js'
+import xmlDocumentToDocumentBudgetaire from '../src/js/finance/xmlDocumentToDocumentBudgetaire';
+import makeAggregateFunction from '../src/js/finance/makeAggregateFunction.js'
+import csvStringToCorrections from '../src/js/finance/csvStringToCorrections';
+import {fromXMLDocument} from '../src/js/finance/planDeCompte.js'
 
 import aggregationDescription from '../data/finances/description-agrégation.json'
 
@@ -32,7 +32,7 @@ mkdir(BUILD_FINANCE_DIR)
 .then( () => {
     return readdir(join(SOURCE_FINANCE_DIR, 'CA'))
     .then(files => {
-        return Promise.all(files.map(f => {
+        return Promise.all(files.filter(f => f.endsWith('.xml')).map(f => {
             return readFile(join(SOURCE_FINANCE_DIR, 'CA', f), {encoding: 'utf-8'})
             .then( str => (new DOMParser()).parseFromString(str, "text/xml") )
             .then(xmlDocumentToDocumentBudgetaire)

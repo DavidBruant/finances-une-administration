@@ -9,12 +9,12 @@ import page from 'page';
 import {urls, FINANCE_DATA, AGGREGATED_ATEMPORAL, AGGREGATED_TEMPORAL} from './constants/resources';
 import reducer from './reducer';
 
-import {LigneBudgetRecord, DocumentBudgetaire} from '../../shared/js/finance/DocBudgDataStructures.js';
-import { fromXMLDocument } from '../../shared/js/finance/planDeCompte';
-import {makeChildToParent, flattenTree} from '../../shared/js/finance/visitHierarchical.js';
-import hierarchicalM52 from '../../shared/js/finance/hierarchicalM52.js';
+import {LigneBudgetRecord, DocumentBudgetaire} from '../js/finance/DocBudgDataStructures.js';
+import { fromXMLDocument } from '../js/finance/planDeCompte';
+import {makeChildToParent, flattenTree} from '../js/finance/visitHierarchical.js';
+import hierarchicalM52 from '../js/finance/hierarchicalM52.js';
 
-import Breadcrumb from '../../shared/js/components/gironde.fr/Breadcrumb';
+import Breadcrumb from './components/gironde.fr/Breadcrumb';
 import FinanceElement from './components/screens/FinanceElement';
 
 import ExploreBudget from './components/screens/ExploreBudget';
@@ -26,7 +26,7 @@ import {
 } from './constants/actions';
 
 
-import {fonctionLabels} from '../../../build/finances/m52-strings.json';
+import {fonctionLabels} from '../../build/finances/m52-strings.json';
 
 
 /**

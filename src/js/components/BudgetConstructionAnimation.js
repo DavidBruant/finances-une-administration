@@ -3,8 +3,8 @@ import React from 'react';
 import { max, sum } from 'd3-array';
 import { scaleLinear } from 'd3-scale';
 
-import PrimaryCallToAction from '../../../shared/js/components/gironde.fr/PrimaryCallToAction';
-import MoneyAmount from '../../../shared/js/components/MoneyAmount';
+import PrimaryCallToAction from './gironde.fr/PrimaryCallToAction';
+import MoneyAmount from './MoneyAmount';
 
 function delay(time){
     return () => new Promise(resolve => setTimeout(resolve, time))

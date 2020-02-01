@@ -3,11 +3,11 @@ import { List } from 'immutable';
 import React from 'react';
 import page from 'page';
 
-import M52Viz from '../../../shared/js/components/M52Viz';
-import LegendList from '../../../shared/js/components/LegendList';
+import M52Viz from '../../js/components/M52Viz';
+import LegendList from '../../js/components/LegendList';
 
-import hierarchicalM52 from '../../../shared/js/finance/hierarchicalM52.js';
-import {DF, DI} from '../../../shared/js/finance/constants';
+import hierarchicalM52 from '../../js/finance/hierarchicalM52.js';
+import {DF, DI} from '../../js/finance/constants';
 
 const STATE_DF = {rdfi: DF};
 const STATE_DI = {rdfi: DI};

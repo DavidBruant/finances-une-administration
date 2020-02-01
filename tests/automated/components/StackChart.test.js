@@ -4,8 +4,8 @@ import React from 'react';
 
 import {mount} from 'enzyme';
 
-import D3Axis from '../../../src/shared/js/components/D3Axis'
-import StackChart from '../../../src/shared/js/components/StackChart';
+import D3Axis from '../../../src/js/components/D3Axis'
+import StackChart from '../../../src/js/components/StackChart';
 
 
 test("Simplest StackChart", () => {

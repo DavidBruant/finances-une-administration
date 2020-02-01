@@ -4,7 +4,7 @@ import memoize from '../memoize';
 
 // using require because importing doesn't seem to work with rollupify otherwise
 // path is relative to the main (which is terrible but works for now)
-import {fonctionLabels} from '../../../../build/finances/m52-strings.json'; 
+import {fonctionLabels} from '../../../build/finances/m52-strings.json'; 
 
 const levelCategories = [
     r => {

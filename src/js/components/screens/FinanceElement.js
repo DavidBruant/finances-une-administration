@@ -7,21 +7,21 @@ import page from 'page';
 
 import { max } from 'd3-array';
 
-import { makeLigneBudgetId } from '../../../../shared/js/finance/DocBudgDataStructures';
-import { aggregatedDocumentBudgetaireNodeTotal, aggregatedDocumentBudgetaireNodeElements } from '../../../../shared/js/finance/AggregationDataStructures.js'
-import hierarchicalM52 from '../../../../shared/js/finance/hierarchicalM52.js';
-import { makeChildToParent, flattenTree } from '../../../../shared/js/finance/visitHierarchical.js';
+import { makeLigneBudgetId } from '../../../js/finance/DocBudgDataStructures';
+import { aggregatedDocumentBudgetaireNodeTotal, aggregatedDocumentBudgetaireNodeElements } from '../../../js/finance/AggregationDataStructures.js'
+import hierarchicalM52 from '../../../js/finance/hierarchicalM52.js';
+import { makeChildToParent, flattenTree } from '../../../js/finance/visitHierarchical.js';
 
-import { DF, DI } from '../../../../shared/js/finance/constants';
+import { DF, DI } from '../../../js/finance/constants';
 
-import { fonctionLabels, natureLabels } from '../../../../../build/finances/m52-strings.json';
+import { fonctionLabels, natureLabels } from '../../../../build/finances/m52-strings.json';
 
-import StackChart from '../../../../shared/js/components/StackChart';
-import { makeAmountString, default as MoneyAmount } from '../../../../shared/js/components/MoneyAmount';
+import StackChart from '../../../js/components/StackChart';
+import { makeAmountString, default as MoneyAmount } from '../MoneyAmount';
 
-import PageTitle from '../../../../shared/js/components/gironde.fr/PageTitle';
-import SecundaryTitle from '../../../../shared/js/components/gironde.fr/SecundaryTitle';
-import DownloadSection from '../../../../shared/js/components/gironde.fr/DownloadSection';
+import PageTitle from '../gironde.fr/PageTitle';
+import SecundaryTitle from '../gironde.fr/SecundaryTitle';
+import DownloadSection from '../gironde.fr/DownloadSection';
 
 import { CHANGE_EXPLORATION_YEAR } from '../../constants/actions';
 
