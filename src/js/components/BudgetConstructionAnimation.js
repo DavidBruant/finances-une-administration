@@ -509,7 +509,7 @@ export default class BudgetConstructionAnimation extends React.Component {
                     React.createElement('a', 
                         { 
                             className: 'brick-column',
-                            href: '#!/finance-details/RF'
+                            href: '#!/detail/RF'
                         },
                         React.createElement('div', {className: 'legend'},
                             React.createElement('div', {className: 'text'}, `Recettes de fonctionnement`),
@@ -538,7 +538,7 @@ export default class BudgetConstructionAnimation extends React.Component {
                     React.createElement('a', 
                         { 
                             className: 'brick-column',
-                            href: '#!/finance-details/DF'
+                            href: '#!/detail/DF'
                         },
                         React.createElement('div', {className: 'legend'},
                             React.createElement('div', {className: 'text'}, `Dépenses de fonctionnement`),
@@ -563,7 +563,7 @@ export default class BudgetConstructionAnimation extends React.Component {
                     React.createElement('a', 
                         { 
                             className: 'brick-column',
-                            href: '#!/finance-details/RI'
+                            href: '#!/detail/RI'
                         },
                         React.createElement('div', {className: 'legend'},
                             React.createElement('div', {className: 'text'}, `Recettes d'investissement`),
@@ -589,7 +589,7 @@ export default class BudgetConstructionAnimation extends React.Component {
                     React.createElement('a', 
                         { 
                             className: 'brick-column',
-                            href: '#!/finance-details/DI'
+                            href: '#!/detail/DI'
                         },
                         React.createElement('div', {className: 'legend'},
                             React.createElement('div', {className: 'text'}, `Dépenses d'investissement`),
@@ -620,24 +620,24 @@ export default class BudgetConstructionAnimation extends React.Component {
             videoURL ? undefined : React.createElement('div', { className: 'text-area' }, ''),
             videoURL ? undefined : React.createElement('hr'),
             React.createElement('dl', {},
-                React.createElement('a', { className: 'column rf', href: '#!/finance-details/RF' },
+                React.createElement('a', { className: 'column rf', href: '#!/detail/RF' },
                     React.createElement('dt', {}, 'Recettes de fonctionnement'),
                     React.createElement('dd', {}, `Ces recettes proviennent principalement du produit des impôts et taxes directes et indirectes, ainsi que des dotations versées par l'État`),
                     React.createElement(PrimaryCallToAction, {text: 'explorer'})
                 ),
-                React.createElement('a', { className: 'column df', href: '#!/finance-details/DF' },
+                React.createElement('a', { className: 'column df', href: '#!/detail/DF' },
                     React.createElement('dt', {}, 'Dépenses de fonctionnement'),
                     React.createElement('dd', {}, `Ces dépenses financent principalement les allocations et prestations sociales ou de solidarité, les services de secours (pompiers), les transports, les collèges, les routes, ainsi que le fonctionnement propre du Département (salaires et moyens) et les intérêts d’emprunts.`),
                     React.createElement(PrimaryCallToAction, {text: 'explorer'})
                 ),
-                React.createElement('a', { className: 'column ri', href: '#!/finance-details/RI' },
+                React.createElement('a', { className: 'column ri', href: '#!/detail/RI' },
                     React.createElement('dt', {}, 'Recettes d’investissement'),
                     React.createElement('dd', {}, `Elles sont principalement constituées de dotations de l’Etat et de subventions`),
                     React.createElement('dt', {}, 'Emprunt'),
                     React.createElement('dd', {}, `Il permet au Département d'atteindre l’équilibre budgétaire et d’investir dans des projets d’ampleur ou durables.`),
                     React.createElement(PrimaryCallToAction, {text: 'explorer'})
                 ),
-                React.createElement('a', { className: 'column di', href: '#!/finance-details/DI' },
+                React.createElement('a', { className: 'column di', href: '#!/detail/DI' },
                     React.createElement('dt', {}, `Dépenses d'investissement`),
                     React.createElement('dd', {}, `Elles concernent des programmes structurants ou stratégiques pour le développement du territoire girondin : bâtiments, routes, collèges, etc.`),
                     React.createElement(PrimaryCallToAction, {text: 'explorer'})

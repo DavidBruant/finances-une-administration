@@ -101,9 +101,9 @@ export function FinanceElement({ contentId, RDFI, amountByYear, contextElements,
                 partAmount: df2.partAmount,
                 texts: df2.texts && df2.texts.set('label', [
                     'Actions sociales ',
-                    React.createElement('a', { href: '#!/finance-details/DF.1' }, '(par prestation)'),
+                    React.createElement('a', { href: '#!/detail/DF.1' }, '(par prestation)'),
                     ' - ',
-                    React.createElement('a', { href: '#!/finance-details/DF.2' }, '(par public)')
+                    React.createElement('a', { href: '#!/detail/DF.2' }, '(par public)')
                 ]),
                 url: undefined
             });
@@ -241,14 +241,14 @@ export function makePartition(element, totalById, textsById, possibleChildrenIds
                 contentId: id,
                 partAmount: child ? totalById.get(child.id) : 0,
                 texts: textsById.get(id),
-                url: `#!/finance-details/${id}`
+                url: `#!/detail/${id}`
             };
         })) :
         List().push({
             contentId: element.id,
             partAmount: totalById.get(element.id),
             texts: textsById.get(element.id),
-            url: `#!/finance-details/${element.id}`
+            url: `#!/detail/${element.id}`
         });
 }
 
@@ -378,7 +378,7 @@ export default connect(
 
                 return ({
                     id: c.id,
-                    url: c.id !== displayedContentId ? '#!/finance-details/' + c.id : undefined,
+                    url: c.id !== displayedContentId ? '#!/detail/' + c.id : undefined,
                     proportion: total / rdTotal,
                     colorClass: colorClassById.get(c.id),
                     label: textsById.get(c.id).label +

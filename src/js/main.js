@@ -69,14 +69,6 @@ const DEFAULT_BREADCRUMB = List([
     {
         text: 'Accueil',
         url: '/'
-    },
-    {
-        text: 'Le Département',
-        url: '/le-departement'
-    },
-    {
-        text: `Un budget au service des solidarités humaine et territoriale`,
-        url: '#'
     }
 ]);
 
@@ -196,13 +188,13 @@ page('/', () => {
     );
 
 
-    const breadcrumb = DEFAULT_BREADCRUMB.push({text: 'Explorer'});
+    const breadcrumb = DEFAULT_BREADCRUMB;
     ReactDOM.render( React.createElement(Breadcrumb, { items: breadcrumb }), BREADCRUMB_CONTAINER );
 });
 
 
-page('/finance-details/:contentId', ({params: {contentId}}) => {
-    console.log('in route', '/finance-details', contentId)
+page('/detail/:contentId', ({params: {contentId}}) => {
+    console.log('in route', '/detail', contentId)
     scrollTo(0, 0);
 
     store.dispatch({
@@ -246,16 +238,11 @@ page('/finance-details/:contentId', ({params: {contentId}}) => {
         if(currentElement.id !== 'racine'){
             breadcrumbData.push({
                 text: textsById.get(currentElement.id).label,
-                url: `#!/finance-details/${currentElement.id}`
+                url: `#!/detail/${currentElement.id}`
             })
         }
         currentElement = childToParent.get(currentElement);
     }
-
-    breadcrumbData.push({
-        text: 'Explorer',
-        url: `#!/explorer`
-    })
 
     const breadcrumb = DEFAULT_BREADCRUMB.concat(breadcrumbData.reverse());
 
