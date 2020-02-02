@@ -3,8 +3,6 @@ import { Map as ImmutableMap } from "immutable";
 import React from "react";
 import { connect } from "react-redux";
 
-import { sum } from "d3-array";
-
 import {
     RF,
     RI,
@@ -25,10 +23,7 @@ import PrimaryCallToAction from "../gironde.fr/PrimaryCallToAction";
 import Markdown from "../Markdown";
 import MoneyAmount from "../MoneyAmount";
 
-import { urls, ANIMATION_VIDEO } from "../../constants/resources";
-
 import M52ByFonction from "../M52ByFonction";
-import BudgetConstructionAnimation from "../BudgetConstructionAnimation";
 
 const MAX_HEIGHT = 30;
 
@@ -39,16 +34,15 @@ export function TotalBudget({
     planDeCompte,
     labelsById,
     urls: {
+        comprendre: comprendreURL,
         expenditures: expURL,
         revenue: revURL,
         rf,
         ri,
         df,
         di,
-        byFonction,
-        animationVideo
+        byFonction
     },
-    constructionAmounts,
     screenWidth
 }) {
     const expenditures = totalById.get(EXPENDITURES);
@@ -77,6 +71,11 @@ export function TotalBudget({
                 Markdown,
                 {},
                 `Cette page montre le budget d'une collectivité choisie`
+            ),
+            React.createElement(
+                'a',
+                { href: comprendreURL },
+                `Comprendre`
             )
         ),
 
@@ -224,32 +223,6 @@ export function TotalBudget({
         ),
         React.createElement(
             "section",
-            {},
-            React.createElement(SecundaryTitle, {
-                text: `Comprendre la construction d'un budget`
-            }),
-            React.createElement(
-                Markdown,
-                {},
-                `Le budget prévoit la répartition des recettes et des dépenses sur un exercice. Il est composé de la section de fonctionnement et d’investissement. Contrairement à l’Etat, les Départements, ont l’obligation d’adopter un budget à l’équilibre. Toutefois, le compte administratif peut présenter sur l'exercice un résultat excédentaire ou déficitaire.`
-            ),
-            React.createElement(
-                Markdown,
-                {},
-                `Dans un contexte particulièrement contraint, la préservation de nos équilibres financiers constitue un défi stimulant. Alors comment s’établit notre budget ?`
-            ),
-            React.createElement(
-                BudgetConstructionAnimation,
-                Object.assign(
-                    {
-                        videoURL: screenWidth <= 1000 ? animationVideo : undefined
-                    },
-                    constructionAmounts
-                )
-            )
-        ),
-        React.createElement(
-            "section",
             { className: "m52" },
             React.createElement(SecundaryTitle, {
                 text: "Les comptes par fonction (norme M52)"
@@ -295,42 +268,8 @@ export default connect(
             m52Instruction,
             planDeCompte,
             labelsById: textsById.map(texts => texts.label),
-            // All of this is poorly hardcoded. TODO: code proper formulas based on what was transmitted by CD33
-            constructionAmounts: aggregated ?
-                {
-                    DotationEtat: totalById.get("RF.5"),
-                    FiscalitéDirecte: totalById.get("RF.1"),
-                    FiscalitéIndirecte: sum(
-                        ["RF.2", "RF.3", "RF.4"].map(i => totalById.get(i))
-                    ),
-                    RecettesDiverses:
-                        totalById.get("RF") -
-                        sum(
-                            ["RF.1", "RF.2", "RF.3", "RF.4", "RF.5"].map(i =>
-                                totalById.get(i)
-                            )
-                        ),
-
-                    Solidarité: totalById.get("DF.1"),
-                    Interventions: totalById.get("DF.3"),
-                    DépensesStructure:
-                        totalById.get("DF") -
-                        sum(["DF.1", "DF.3"].map(i => totalById.get(i))),
-
-                    Emprunt: totalById.get("RI.EM"),
-                    RIPropre: totalById.get("RI") - totalById.get("RI.EM"),
-
-                    RemboursementEmprunt: totalById.get("DI.EM"),
-                    Routes: totalById.get("DI.1.2"),
-                    Colleges: totalById.get("DI.1.1"),
-                    Amenagement:
-                        totalById.get("DI.1.3") +
-                        totalById.get("DI.1.4") +
-                        totalById.get("DI.1.5"),
-                    Subventions: totalById.get("DI.2")
-                }
-                : undefined,
             urls: {
+                comprendre: "#!/comprendre/",
                 expenditures: "#!/detail/" + EXPENDITURES,
                 revenue: "#!/detail/" + REVENUE,
                 rf: "#!/detail/" + RF,
@@ -358,8 +297,7 @@ export default connect(
                     "M52-DI-7": `#!/detail/M52-DI-7`,
                     "M52-DI-8": `#!/detail/M52-DI-8`,
                     "M52-DI-9": `#!/detail/M52-DI-9`
-                },
-                animationVideo: urls[ANIMATION_VIDEO]
+                }
             },
             screenWidth
         };

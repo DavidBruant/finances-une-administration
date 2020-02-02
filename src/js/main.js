@@ -18,6 +18,7 @@ import Breadcrumb from './components/gironde.fr/Breadcrumb';
 import FinanceElement from './components/screens/FinanceElement';
 
 import ExploreBudget from './components/screens/ExploreBudget';
+import Comprendre from './components/screens/Comprendre';
 
 import { HOME } from './constants/pages';
 import {
@@ -193,6 +194,24 @@ page('/', () => {
 });
 
 
+page('/comprendre', () => {
+    console.log('in route', '/comprendre');
+
+    ReactDOM.render(
+        React.createElement(
+            Provider,
+            { store },
+            React.createElement(Comprendre)
+        ),
+        CONTAINER_ELEMENT
+    );
+
+
+    const breadcrumb = DEFAULT_BREADCRUMB;
+    ReactDOM.render( React.createElement(Breadcrumb, { items: breadcrumb }), BREADCRUMB_CONTAINER );
+})
+
+
 page('/detail/:contentId', ({params: {contentId}}) => {
     console.log('in route', '/detail', contentId)
     scrollTo(0, 0);
@@ -253,7 +272,8 @@ page('/detail/:contentId', ({params: {contentId}}) => {
 page.redirect(location.pathname, '#!/')
 page.redirect(location.pathname+'/', '#!/')
 
-page.base(location.pathname);
+if(location.pathname !== '/')
+    page.base(location.pathname);
 
 page({ hashbang: true });
 window.addEventListener('hashchange', () => {
