@@ -14,6 +14,13 @@ Ce repo n'a pas trop de valeur en lui-même. Il a pour objet d'être forké puis
 - Visiter https://*username*.github.io/finances-*collectivité*
 
 
+## Dev
+
+`npm run build:data:finance-data`
+`npm run watch`
+`npm start`
+
+
 ## Historique
 
 Ce repo est basé sur [le travail de dtc-innovation et du Département de la Gironde](https://github.com/datalocale/dataviz-finances-gironde/)

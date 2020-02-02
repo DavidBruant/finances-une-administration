@@ -20,22 +20,8 @@ jobs:
     - stage: "Test"
       script: npm test
     - stage: deploy
-      script: npm run build-demo
+      script: npm run build
       env: DEPLOY_TARGET_BRANCH=gh-pages
-      deploy:
-        - provider: script
-          skip_cleanup: true
-          script: bash ./tools/deploy.sh
-    - stage: deploy
-      script: npm run build-preprod
-      env: DEPLOY_TARGET_BRANCH=preprod-gironde.fr
-      deploy:
-        - provider: script
-          skip_cleanup: true
-          script: bash ./tools/deploy.sh
-    - stage: deploy
-      script: npm run build-production
-      env: DEPLOY_TARGET_BRANCH=gironde.fr
       deploy:
         - provider: script
           skip_cleanup: true

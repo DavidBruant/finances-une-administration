@@ -20,7 +20,6 @@ import { flattenTree } from "../../../js/finance/visitHierarchical.js";
 
 import PageTitle from "../gironde.fr/PageTitle";
 import SecundaryTitle from "../gironde.fr/SecundaryTitle";
-import DownloadSection from "../gironde.fr/DownloadSection";
 import PrimaryCallToAction from "../gironde.fr/PrimaryCallToAction";
 
 import Markdown from "../Markdown";
@@ -77,15 +76,7 @@ export function TotalBudget({
             React.createElement(
                 Markdown,
                 {},
-                `L’année 2018 a été marquée par la mise en oeuvre de la loi de programmation des finances publiques(LPFP) 2018/2022.
-
-En effet un double objectif a été assigné aux collectivités locales par l’article 13 de la loi de la LPFP 2018/2022 afin de  maitriser les dépenses publiques et réaliser un plan d’économie de 13Md€ par réduction de la dette publique 
-                
-- la limitation de l’évolution des dépenses de fonctionnement à un maximum de 1.2% par an par rapport à une base 2017 modulée à la hausse ou à la baisse en fonction des critères propres à la Collectivité 
-                
-- l’amélioration du besoin de financement (c'est-à-dire les emprunts contractés moins le remboursement de la dette)
-                
-Ainsi les résultats financiers 2018 du Département de la GIRONDE, traduisent la volonté  du département de poursuivre la stratégie financière qui repose sur la réservation d’une partie de nos recettes de fonctionnement (l’épargne brute) pour le financement d’un plan d’investissement ambitieux`
+                `Cette page montre le budget d'une collectivité choisie`
             )
         ),
 
@@ -271,18 +262,7 @@ Ainsi les résultats financiers 2018 du Département de la GIRONDE, traduisent l
                     labelsById,
                     screenWidth
                 })
-                : undefined,
-            React.createElement(DownloadSection, {
-                title: `Données brutes sur datalocale.fr`,
-                items: [
-                    {
-                        text:
-                            "Comptes administratifs du Département de la Gironde au format XML TOTEM",
-                        url:
-                            "https://www.datalocale.fr/dataset/comptes-administratifs-budget-principal-donnees-budgetaires-du-departement-de-la-gironde"
-                    }
-                ]
-            })
+                : undefined
         )
     );
 }

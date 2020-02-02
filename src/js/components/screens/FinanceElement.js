@@ -21,7 +21,6 @@ import { makeAmountString, default as MoneyAmount } from '../MoneyAmount';
 
 import PageTitle from '../gironde.fr/PageTitle';
 import SecundaryTitle from '../gironde.fr/SecundaryTitle';
-import DownloadSection from '../gironde.fr/DownloadSection';
 
 import { CHANGE_EXPLORATION_YEAR } from '../../constants/actions';
 
@@ -213,18 +212,6 @@ export function FinanceElement({ contentId, RDFI, amountByYear, contextElements,
                             )
                         })
                 )
-            ),
-            React.createElement(
-                DownloadSection,
-                {
-                    title: `Données brutes sur datalocale.fr`,
-                    items: [
-                        {
-                            text: 'Comptes administratifs du Département de la Gironde au format TOTEM',
-                            url: 'https://www.datalocale.fr/dataset/comptes-administratifs-budget-principal-donnees-budgetaires-du-departement-de-la-gironde'
-                        }
-                    ]
-                }
             )
         ) : undefined
 
