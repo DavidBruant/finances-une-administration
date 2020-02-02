@@ -146,7 +146,7 @@ json(urls[FINANCE_DATA])
     });
 
     for(const {Exer} of documentBudgetaires){
-        xml(`https://datalocale.github.io/dataviz-finances-gironde/data/finances/plansDeCompte/plan-de-compte-M52-M52-${Exer}.xml`)
+        xml(`/data/finances/plansDeCompte/plan-de-compte-M52-M52-${Exer}.xml`)
         .then(fromXMLDocument)
         .then(planDeCompte => {
             store.dispatch({

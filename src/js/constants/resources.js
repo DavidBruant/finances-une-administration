@@ -7,7 +7,7 @@ export const M52_FONCTION_TEMPORAL = "M52_FONCTION_TEMPORAL";
 
 export const CORRECTIONS_AGGREGATED = "CORRECTIONS_AGGREGATED";
 
-const URL_PREFIX = `/finances-une-administration`;
+const URL_PREFIX = `.`; // `/finances-une-administration`;
 
 
 export const urls = {
